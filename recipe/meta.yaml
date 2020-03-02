@@ -1,18 +1,18 @@
 {% set name = "localstack-client" %}
-{% set version = "0.18" %}
+{% set version = "0.19" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 7054516673c0188679252c0c7412efee970bac5799bae3ce051cd50a01a22d75
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 9d2b1f229ec3666f3738fd5ef6c613b6298955d754c00a5955ecab294a80f93f
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -27,13 +27,13 @@ test:
     - localstack_client
 
 about:
-  home: "https://github.com/localstack/localstack-python-client"
-  license: "Apache-2.0"
-  license_family: "APACHE"
-  license_file: "LICENSE"
-  summary: "A lightweight Python client for LocalStack."
-  doc_url: "https://pypi.org/project/localstack-client/"
-  dev_url: "https://github.com/localstack/localstack-python-client"
+  home: https://github.com/localstack/localstack-python-client
+  license: Apache-2.0
+  license_family: APACHE
+  license_file: LICENSE
+  summary: A lightweight Python client for LocalStack.
+  doc_url: https://pypi.org/project/localstack-client/
+  dev_url: https://github.com/localstack/localstack-python-client
 
 extra:
   recipe-maintainers:
