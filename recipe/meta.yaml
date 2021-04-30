@@ -17,10 +17,10 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
     - boto3
-    - python
+    - python >=3.6
 
 test:
   imports:
@@ -37,6 +37,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - mxr-conda
     - mwilson8
     - oblute
     - benhuff
