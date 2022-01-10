@@ -1,31 +1,35 @@
 {% set name = "localstack-client" %}
-{% set version = "1.12" %}
+{% set version = "1.29" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c09ffa29dc546aaa5fd049b0fd3542e21a952ae9959470fcc4fec55f10c41cff
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/localstack-client-{{ version }}.tar.gz
+  sha256: c270f7ec67fbdf092fa4af9e0036582733ccbfd82efd5ffd0b1a241c6b86d1ac
 
 build:
-  noarch: python
   number: 0
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
     - boto3
-    - python
+    - python >=3.6
 
 test:
   imports:
     - localstack_client
-
+  commands:
+    - pip check
+  requires:
+    - pip
 about:
   home: https://github.com/localstack/localstack-python-client
   license: Apache-2.0
@@ -37,6 +41,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - mwilson8
-    - oblute
-    - benhuff
+    - mxr-conda
