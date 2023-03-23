@@ -1,11 +1,11 @@
-About localstack-client
-=======================
+About localstack-client-feedstock
+=================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/localstack-client-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/localstack/localstack-python-client
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/localstack-client-feedstock/blob/main/LICENSE.txt)
 
 Summary: A lightweight Python client for LocalStack.
 
